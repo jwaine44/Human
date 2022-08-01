@@ -27,10 +27,10 @@ public class Human
     }
     
     // Build Attack method
-    Human attacker = new Human("Benny");
+
     public int Attack(Human target)
     {
-        target.Health -= (attacker.Strength * 5);
+        target.Health -= (Strength * 5);
         return target.Health;
     }
 }
