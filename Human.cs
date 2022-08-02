@@ -1,10 +1,11 @@
+namespace Humans;
 public class Human
 {
-    public string Name;
-    public int Strength;
-    public int Intelligence;
-    public int Dexterity;
-    public int Health;
+    public string Name {get;set;}
+    public int Strength {get;set;}
+    public int Intelligence {get;set;}
+    public int Dexterity {get;set;}
+    public int Health {get;set;}
 
     // Add a constructor that takes a value to set Name, and set the remaining fields to default values
     public Human(string val)
@@ -25,12 +26,18 @@ public class Human
         Dexterity = dexNum;
         Health = healthNum;
     }
+
+    public string AllAttributes()
+    {
+        return $"Name: {Name}, strength is {Strength}, intelligence is {Intelligence}, dexterity is {Dexterity}, health is {Health}!";
+    }
     
     // Build Attack method
 
     public int Attack(Human target)
     {
         target.Health -= (Strength * 5);
+        Console.WriteLine(target.Health);
         return target.Health;
     }
 }
